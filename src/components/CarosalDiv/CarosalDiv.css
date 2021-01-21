@@ -1,0 +1,38 @@
+.carosal_Logo {
+    width: 60px;
+}
+.CarosalDiv{
+    padding: 15px;
+}
+.CarosalDivInner{
+    background: #fff;
+    padding: 15px;
+
+}
+.CarosalHeaderPart{
+    display: flex;
+
+}
+.BottomCarosal{    display: flex;
+    justify-content: space-between;}
+    .Desc{
+        padding: 5px 0;
+    }
+    .CarosalHeaderPartHead{padding: 0 10px;}
+    .CarosalHeaderPartHeadH{font-size: 18px;}
+    .CarosalHeaderPartHeadSub{font-size: 14px;}
+
+   .carosalBlock .carousel-prev:before {
+         background-size: 20px !important;
+    }
+    .carosalBlock .carousel-next:before {
+        background-size: 20px !important;
+    }
+    .carosalBlock .carousel-prev:before, .carosalBlock .carousel-next:before {
+        content: '';
+
+        width: 40px;
+        background-color: #ccc;
+        border-radius: 50%;
+        height: 40px;
+    }

@@ -1,0 +1,42 @@
+#Header {
+  height: 150px;
+  overflow: hidden;
+}
+
+#SearchBar {
+  margin-right: 100px;
+}
+
+#Menu {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 420px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+  z-index: 5;
+}
+
+#Menu .card {
+  height: 80px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+#Menu .text {
+  color: #474747;
+  font-family: "Montserrat";
+  font-size: 10px;
+  opacity: 0.5;
+}
+
+#Menu .date-time-text {
+  color: #474747;
+  font-family: "Montserrat";
+  font-size: 14px;
+}
+
+#Menu .profile-picture1 {
+  width: 60px;
+  height: 60px;
+}

@@ -1,0 +1,98 @@
+.loginDropdown .sort-dd-menu {
+    padding: 10px 8px;
+    /* left: -35px!important; */
+    width: 150px;
+    min-width: auto;
+    border-radius: 0;
+
+  
+}
+
+.loginDropdown .sort-dd-menu .dropdown-item:hover {
+    background: #2196f300;
+    line-height: 24px;
+    text-decoration: none;
+}
+
+.loginDropdown .dropdown-toggle.btn.btn-primary {
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+.loginDropdown .dropdown-item{
+    height: 37px;
+}
+.LoginBtn .logedIn { text-align: left;
+    line-height: 1;
+}
+.LoginBtn .logedIn .Dropdown-control {
+    margin-top:10px;
+    border: 0px solid rgb(255, 255, 255);
+}
+.LoginBtn .logedIn .loginDropdown.cite-drop
+{
+    margin-top:10px;
+}
+.LoginBtn .logedIn .sort-dd-menu .dropdown-item {
+    line-height: 24px;
+}
+
+.LoginBtn .logedIn .Dropdown-control:hover {
+    box-shadow: 0 0px 0 rgba(0, 0, 0, 0.06);
+}
+.LoginBtn {
+    line-height: 60px;
+    float: right;
+    font-size: 20px;
+    width: 200px;
+    text-align: right;}
+    .LoginBtn span.beforelogin{
+    padding-right: 20px;}
+
+    .LoginBtn .Dropdown-menu
+{
+    padding: 11px 2px;
+}
+.LoginBtn  .Dropdown-option {
+        color: rgb(51 51 51);
+        padding: 10px 10px;
+    }
+
+   .loginDropdown.btn:active {
+        box-shadow: none;
+        color: #000;
+    }
+    .loginDropdown.btn:hover {
+        box-shadow: none;
+        color: #000;
+    }
+    .loginDropdown.btn:focus {
+        outline:none!important;
+        color: #000;
+    }
+    .loginDropdown.btn {
+        color: #000;
+    }
+
+    .social-iconsNear a {
+        background-color: #eceeef;
+        color: #818a91;
+        font-size: 16px;
+        display: inline-block;
+        line-height: 32px;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        margin-right: 8px;
+        border-radius: 100%;
+        transition: all .2s linear;
+    }
+    .CarosalWrap{
+        background: #fff;
+    }
+    h3{
+        padding-left: 15px;
+    }
+    h6{
+        font-size: 14px;
+        padding-left: 30px;
+    }

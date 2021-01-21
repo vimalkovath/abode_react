@@ -1,0 +1,10 @@
+#Sidebar {
+  height: calc(100vh - 120px);
+}
+
+#Sidebar section.bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 25px;
+}

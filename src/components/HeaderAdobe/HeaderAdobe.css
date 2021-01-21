@@ -1,0 +1,156 @@
+#feds-topnav {
+    min-height: 60px;
+    background-color: #FFFFFF;
+    justify-content: center;
+    align-items: stretch;
+    position: relative;
+    z-index: 1;
+    max-width: 100vw;
+    -webkit-font-smoothing: antialiased;
+}
+ #feds-topnav .feds-navBar {
+    width: 100%;
+    min-height: inherit;
+    display: flex;
+    justify-content: inherit;
+    align-items: inherit;
+    flex-direction: inherit;
+}
+ #feds-header ul {
+    list-style-type: none;
+}
+#feds-topnav .feds-navList {
+    width: 100%;
+    display: flex;
+    flex-direction: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    -ms-flex-item-align: stretch;
+    flex-wrap: inherit;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+#feds-topnav .feds-navList-wrapper {
+    width: 100%;
+    display: flex;
+    line-height: 1;
+}
+#gnav_4 {
+    justify-content: center;
+    border-bottom: solid 1px #EAEAEA;
+}
+#gnav_6 {
+    max-width: 1440px;
+    justify-content: space-between;
+    min-height: 64px;
+}
+
+#gnav_30 .feds-navLink-text,
+ #gnav_35 .feds-navLink-text,
+  #gnav_20 .feds-navLink-text, 
+  #gnav_25 .feds-navLink-text {
+    color: #2c2c2c;
+    font-weight: 400;
+    font-size: 14px;
+}
+ #feds-topnav .feds-navLink-content {
+    flex-direction: column;
+    display: flex;
+}
+#feds-topnav .feds-navLink-contentWrapper {
+    position: relative;
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+#feds-topnav a.feds-navLink {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    white-space: nowrap;
+    line-height: 1.4;
+    text-decoration: none;
+    transition: background-color .1s ease;
+}
+#feds-topnav .feds-navList-item {
+    display: flex;
+    list-style: none;
+}
+ #feds-header ul {
+    list-style-type: none;
+}
+
+/* logo
+ */
+ #gnav_12 .feds-logo-text {
+    font-weight: 700;
+    font-size: 18px;
+}
+#gnav_12 .feds-logo-image {
+    width: 25px;
+}
+#gnav_12 {
+    color: #FA0F00;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#feds-topnav a.feds-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+ #feds-topnav .feds-navList-item {
+    display: flex;
+    list-style: none;
+}
+ #feds-topnav a.feds-logo {
+    position: static;
+    transform: none;
+}
+#feds-topnav {
+    background-color: #FFFFFF;
+    justify-content: center;
+    align-items: stretch;
+}
+
+
+ .gnavTopnav aside, 
+ .gnavTopnav h5, 
+ .gnavTopnav li, 
+ .gnavTopnav p, 
+ [lang] .gnavTopnav aside, 
+ [lang] .gnavTopnav h5, 
+ [lang] .gnavTopnav li, 
+ [lang] .gnavTopnav p {
+    margin: 0;
+    line-height: 1;
+    font-size: 14px;
+}
+.feds-navList-main{
+    width: 100%;
+    padding-left: 0;
+}
+
+.menu-items li{
+padding-left: 10px;
+padding-right: 10px;
+}
+.signin_left li{
+    padding-top: 14px;
+padding-left: 10px;
+padding-right: 10px;
+}
+.signin_left li.adjest{
+    padding-top: 20px;
+}
+
+.signin_left li + li {
+padding-left: 40px;
+padding-right: 30px;
+}
