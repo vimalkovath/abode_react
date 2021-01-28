@@ -1,8 +1,8 @@
-import React, { useState,useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 
 
 import { useSelector, useDispatch } from 'react-redux'
-import { filterCake, filterList } from '../../redux'
+import { filterAll, filterCake, filterList } from '../../redux'
 
 
 const list = [
@@ -25,31 +25,47 @@ const list = [
 
 export const ListItems = (props) => {
 
-  const [listClick, setListClick] = useState("All");
+  const [listClick, setListClick] = useState("init");
 
   // const numOfCakes = useSelector(state => state.cake)
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   // let listItems3 = useMemo(()=> listItems2 , [])
-  const handleClickOnList =  useCallback((_props) => {
-    console.log(_props, "props");
-    setListClick(_props);
-    dispatch(filterList(_props))
-  },
-    [listClick]
-  );
-
-  // const handleClickOnList = (_props) => {
+  // const handleClickOnList =  useCallback((_props) => {
   //   console.log(_props, "props");
+  //   setListClick(_props);
   //   dispatch(filterList(_props))
-  // };
+  // },
+  //   [listClick]
+  // );
+
+  useEffect(() => {
+
+    handleClickOnList(listClick);
+
+  }, [listClick]) // Only re-run the effect if count changes
+
+  const handleClickOnList = (_props) => {
+    if (listClick == "init") {
+      console.log(_props, "props", listClick);
+
+
+    }
+    else {
+      if (listClick == "All") {
+        dispatch(filterAll("All"))
+      } else {
+        dispatch(filterList(_props));
+      }
+    }
+  };
 
   return (
-
+    // onClick={(e) => handleClickOnList(item)}
     <>
       <ul>
         {list.map(item => {
-          return <li key={item} onClick={(e) => handleClickOnList(item)} >{item}</li>;
+          return <li key={item} onClick={(e) => setListClick(item)} >{item}</li>;
         })}
       </ul>
 

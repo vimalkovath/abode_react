@@ -3,6 +3,7 @@ import { REMOVE_CAKE } from './cakeTypes'
 import { FILTER_CAKE } from './cakeTypes'
 
 import { FILTER_LIST } from './cakeTypes'
+import { FILTER_ALL } from './cakeTypes'
 
 export const buyCake = (number = 1) => {
   return {
@@ -25,5 +26,11 @@ export const filterList = (filter) => ({
   type: FILTER_LIST,
   payload: filter
 });
+
+export const filterAll = (filter) => ({
+  type: FILTER_ALL,
+  payload: filter
+});
+
 
 

@@ -4,6 +4,8 @@ import { REMOVE_CAKE } from './cakeTypes'
 import { FILTER_CAKE } from './cakeTypes'
 
 import { FILTER_LIST } from './cakeTypes'
+import { FILTER_ALL } from './cakeTypes'
+
 
 import one from '../../assets/img/1.png'
 import two from '../../assets/img/2.png'
@@ -23,7 +25,8 @@ import fourteen from '../../assets/img/5.png'
 const initialState = {
   searchText: "LightRoom",
   "cake": [
-    {id:1,
+    {
+      id: 1,
       image: one,
       heading: "Adobe exchange",
       sub: "New sub ",
@@ -32,7 +35,7 @@ const initialState = {
 
 
     }, {
-      id:2,
+      id: 2,
       image: one,
       heading: "Adobe exchange",
       sub: "New sub ",
@@ -40,7 +43,7 @@ const initialState = {
       tag: "Photoshop"
 
     }, {
-      id:3,
+      id: 3,
       image: two,
       heading: "Adobe exchange",
       sub: "New sub ",
@@ -49,7 +52,7 @@ const initialState = {
 
 
     }, {
-      id:4,
+      id: 4,
       image: three,
       heading: "Adobe exchange",
       sub: "New sub ",
@@ -57,7 +60,7 @@ const initialState = {
       tag: "Classic"
 
     }, {
-      id:5,
+      id: 5,
       image: four,
       heading: "Adobe exchange",
       sub: "New sub ",
@@ -66,7 +69,7 @@ const initialState = {
 
 
     }, {
-      id:6,
+      id: 6,
       image: five,
       heading: "Adobe exchange",
       sub: "New sub ",
@@ -74,7 +77,7 @@ const initialState = {
       , tag: "Photoshop1"
 
     }, {
-      id:7,
+      id: 7,
       image: six,
       heading: "Adobe exchange",
       sub: "New sub ",
@@ -82,7 +85,7 @@ const initialState = {
       , tag: "InDesign"
 
     }, {
-      id:8,
+      id: 8,
       image: sevan,
       heading: "Adobe exchange",
       sub: "New sub ",
@@ -90,7 +93,7 @@ const initialState = {
       , tag: "InDesign1"
 
     }, {
-      id:9,
+      id: 9,
       image: eight,
       heading: "Adobe exchange",
       sub: "New sub ",
@@ -98,7 +101,7 @@ const initialState = {
       , tag: "Photoshop1"
     }
     , {
-      id:10,
+      id: 10,
       image: nine,
       heading: "Adobe exchange",
       sub: "New sub ",
@@ -106,7 +109,7 @@ const initialState = {
       , tag: "Photoshop1"
     }
     , {
-      id:11,
+      id: 11,
       image: ten,
       heading: "Adobe exchange",
       sub: "New sub ",
@@ -115,7 +118,7 @@ const initialState = {
 
     }
     , {
-      id:12,
+      id: 12,
       image: eleven,
       heading: "Adobe exchange",
       sub: "New sub ",
@@ -123,7 +126,7 @@ const initialState = {
       , tag: "Photoshop1"
 
     }, {
-      id:13,
+      id: 13,
       image: twelve,
       heading: "Adobe exchange",
       sub: "New sub ",
@@ -131,7 +134,7 @@ const initialState = {
       , tag: "LightRoom"
     }
     , {
-      id:14,
+      id: 14,
       image: therten,
       heading: "Adobe exchange",
       sub: "New sub ",
@@ -139,7 +142,7 @@ const initialState = {
       , tag: "LightRoom1"
     }
     , {
-      id:15,
+      id: 15,
       image: fourteen,
       heading: "Adobe exchange",
       sub: "New sub ",
@@ -151,33 +154,39 @@ const initialState = {
 
 const cakeReducer = (state = initialState, action) => {
 
-  console.log("action",action);
- 
+  console.log("action", action);
+
   switch (action.type) {
 
     case BUY_CAKE: return {
-      ...state ,
-       cake: state
+      ...state,
+      cake: state
     }
 
     case REMOVE_CAKE:
       return {
-        ...state ,
-        cake:state.cake.filter((x) => x.id !== 1)
+        ...state,
+        cake: state.cake.filter((x) => x.id !== 1)
       };
-      case FILTER_CAKE:
-        return {
-          ...state ,
-          cake:state.cake.filter((x) => x.tag === action.payload.filter)
-          // cake:state.cake.filter(({ tag }) => tag !== action.filter)
-        };
-        case FILTER_LIST:
-          return {
-            ...state ,
-            cake:initialState.cake.filter((x) => x.tag === action.payload)
-            // cake:state.cake.filter((x) => x.tag === action.payload)
-          };
-     
+    case FILTER_CAKE:
+      return {
+        ...state,
+        cake: state.cake.filter((x) => x.tag === action.payload.filter)
+        // cake:state.cake.filter(({ tag }) => tag !== action.filter)
+      };
+    case FILTER_LIST:
+      return {
+        ...state,
+        cake: initialState.cake.filter((x) => x.tag === action.payload)
+        // cake:state.cake.filter((x) => x.tag === action.payload)
+      };
+    case FILTER_ALL:
+      return {
+        ...state,
+        cake: initialState.cake
+        // cake:state.cake.filter((x) => x.tag === action.payload)
+      };
+
     default: return state
   }
 

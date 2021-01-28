@@ -3,3 +3,4 @@ export { removeCake } from './cake/cakeAction'
 export { filterCake } from './cake/cakeAction'
 
 export { filterList } from './cake/cakeAction'
+export { filterAll } from './cake/cakeAction'
