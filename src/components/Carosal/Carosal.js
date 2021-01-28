@@ -36,15 +36,15 @@ export const Carosal = (props) => {
     className: 'carosalBlock',
     gutter: 1,
     overScan: 1,
-    initialSlide: 3,
+    initialSlide: 4,
     shift: 1,
-    slidesPerRow: 3,
+    slidesPerRow: 4,
     swipe: false
   };
+  console.log(props, 'props');
 
   if (props.settings) {
     settings = props.settings;
-    console.log(settings, 'settings');
   }
   // const carosal_data=props.carosal_data;
   const carosal_data =

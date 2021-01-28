@@ -13,7 +13,12 @@ export const CheckBoxs = (props) => {
     return () => clearTimeout(timer)
   }, [])
 
-  // console.log(fruits,"fruits");
+  if(fruits.length>0){
+    console.log(fruits,"fruits");
+  }
+
+
+
   const list = [
   'All', 
   'Photoshop',
@@ -33,12 +38,13 @@ export const CheckBoxs = (props) => {
   ];
 
   return (
+
     <CheckboxGroup name="fruits" value={fruits} onChange={setFruits}>
       {(Checkbox) => (
         <ul>
           {list.map(item => (
             <li key={item}>
-              <Checkbox value={item} /> {item}
+              <Checkbox value={item}  /> {item}
             </li>
           ))}
         </ul>

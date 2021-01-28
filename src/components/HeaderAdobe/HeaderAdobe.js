@@ -4,6 +4,7 @@ import {Button} from '@adobe/react-spectrum'
 
 import { Column, Linkage, LinkP } from "../../common/styled";
 import './HeaderAdobe.css';
+import MenuList from "./MenuList";
 export const HeaderAdobe = (props) => {
 
   return (
@@ -31,7 +32,8 @@ export const HeaderAdobe = (props) => {
                                     <img src="https://www.adobe.com/content/dam/cc/icons/Adobe_Corporate_Horizontal_Red_HEX.svg" alt="Adobe" />
                                   </span>
                                   <span className="feds-logo-text">
-                                    Adobe Exchange</span>
+                                    Adobe Exchange
+                                    </span>
                                 </a>
                               </li>
 
@@ -43,52 +45,14 @@ export const HeaderAdobe = (props) => {
                                   </div>
                                 </aside>
 
-                                  <ul className="feds-navList menu-items" >
+                                  
+                                  <MenuList></MenuList>
 
-                                    <li id="Globalnav.CC" className="feds-navList-item">
-                                      <a id="gnav_20" href="https://exchange.adobe.com/creativecloud" className="feds-navLink" >
-                                        <span className="feds-navLink-contentWrapper">
-                                          <span className="feds-navLink-content">
-                                            <span className="feds-navLink-text">Creative Cloud</span>
+                                   
 
-                                          </span>
-                                        </span>
-                                      </a>
-                                    </li>
+                                    
 
-                                    <li id="Globalnav.EC" className="feds-navList-item">
-                                      <a id="gnav_25" href="https://exchange.adobe.com/experiencecloud" className="feds-navLink feds-navLink--active" data-feds-action="none" data-feds-element="link" daa-ll="EC-2">
-                                        <span className="feds-navLink-contentWrapper">
-                                          <span className="feds-navLink-content">
-                                            <span className="feds-navLink-text">Experience Cloud</span>
-                                          </span>
-                                        </span>
-                                      </a>
-                                    </li>
-
-
-                                    <li id="Globalnav.DC" className="feds-navList-item">
-                                      <a id="gnav_30" href="https://exchange.adobe.com/documentcloud" className="feds-navLink" data-feds-action="none" data-feds-element="link" daa-ll="DC-3">
-                                        <span className="feds-navLink-contentWrapper">
-                                          <span className="feds-navLink-content">
-                                            <span className="feds-navLink-text">Document Cloud</span>
-                                          </span>
-                                        </span>
-                                      </a>
-                                    </li>
-
-
-                                    <li id="Globalnav.My_Exchange" className="feds-navList-item">
-                                      <a id="gnav_35" href="https://exchange.adobe.com/my-exchange.html" className="feds-navLink" data-feds-action="none" data-feds-personalization="{&quot;personalizedData&quot;:[{&quot;platforms&quot;:{&quot;scripts&quot;:[]},&quot;user-data&quot;:{&quot;scripts&quot;:[{&quot;jsToEvaluate&quot;:&quot;feds.data.isLoggedIn&quot;,&quot;jsComparison&quot;:&quot;===&quot;,&quot;jsValue&quot;:&quot;false&quot;,&quot;jsTimeout&quot;:&quot;10000&quot;}]},&quot;variation&quot;:{&quot;hide&quot;:true}}]}" data-feds-element="link" daa-ll="My_Exchange-4" hidden={true}>
-                                        <span className="feds-navLink-contentWrapper">
-                                          <span className="feds-navLink-content">
-                                            <span className="feds-navLink-text">My Exchange</span>
-                                          </span>
-                                        </span>
-                                      </a>
-                                    </li>
-
-                                  </ul>
+                                 
                                 </div>
                               </li>
 

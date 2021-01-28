@@ -12,17 +12,24 @@ import { View } from '@react-spectrum/view';
 import { Flex } from '@adobe/react-spectrum'
 import { HeaderAdobe } from '../HeaderAdobe/HeaderAdobe';
 import { Carosal } from '../Carosal/Carosal';
-import { CarosalDiv } from '../CarosalDiv/CarosalDiv';
-import { CheckBoxs } from '../CheckBoxs/CheckBoxs';
-import { ListItems } from '../ListItems/ListItems';
 import { AppFooter } from '../AppFooter/AppFooter';
 
 import { Banner } from "../Banner/Banner";
 import bannerDefault from '../../assets/img/home_img.png'
 
+import { carosal_data } from "../../global/data";
+
+// import { connect } from 'react-redux'
+// import { buyCake } from '../../redux'
+import reduxStore from '../../redux/reduxStore'
+import { MainContainer } from '../MainContainer/MainContainer';
+
+
+
 
 export const AppHeader = createComponent(AppStore, (props, AppData) => {
 
+  
   let settings = {
     dots: false,
     dotsScroll: 1,
@@ -34,14 +41,26 @@ export const AppHeader = createComponent(AppStore, (props, AppData) => {
     slidesPerRow: 3,
     swipe: false
   };
+  // console.log("carosal_data", carosal_data);
+
+  const handleListClick = (_fromListChild) => {
+    console.log("_fromListChild", _fromListChild);
+  }
+
+  const advertise = "";
+  const campaign = "";
+  const contentMangement = "";
+  const personalize = "";
+  const audienceManager = "";
+
+
 
 
 
   return (
     <div className=''>
 
-
-      <Provider theme={defaultTheme} colorScheme="light">
+      <Provider  theme={defaultTheme} colorScheme="light">
 
         <Suspense fallback={"Loading"}>
 
@@ -54,85 +73,17 @@ export const AppHeader = createComponent(AppStore, (props, AppData) => {
               {/* {props.children} */}
             </View>
             <View   >
-              {/* {props.children} */}
               <div className="CarosalWrap">
                 <Carosal />
-
               </div>
             </View>
 
-            <Flex direction="row" gap="size-100">
-              <View width="size-3000" >
-                <div>
-                  <h6>View Product</h6>
-                  <ListItems></ListItems>
-                  <hr />
-                </div>
 
-                <div>
-                  <h6>Filter By Popular Tags</h6>
-                  <CheckBoxs></CheckBoxs>
-                  <hr />
-                </div>
 
-                <div>
-                  <h6>Resources</h6>
-                  <ul>
-                    <li>
-                      <a>My Exchange</a>
-                    </li>
-                    <li>
-                      <a>Forms</a>
-                    </li>
-                    <li>
-                      <a>Help and View</a>
-                    </li>
-                    <li>
-                      <a>Go to Product Page</a>
-                    </li>
-                  </ul>
-                  <hr />
-                </div>
+           <MainContainer></MainContainer>
 
 
 
-                <div>
-                  <ul className="social-iconsNear">
-                    <li><a className="facebook" href="#"><i className="fa fa-facebook"></i></a>Follow Us On Facebook</li>
-                    <li><a className="twitter" href="#"><i className="fa fa-twitter"></i></a>Follow Us On Twitter</li>
-                  </ul>
-                </div>
-
-              </View>
-
-              <View flex >
-
-                <div>
-                  <h3>Popular Apps For Advertising</h3>
-                  <CarosalDiv settings={settings} />
-                </div>
-
-                <div>
-                  <h3>Popular Apps For Campain</h3>
-                  <CarosalDiv settings={settings} />
-                </div>
-
-                <div>
-                  <h3>Popular Apps For Content Management</h3>
-                  <CarosalDiv settings={settings} />
-                </div>
-
-                <div>
-                  <h3>Popular Apps For Audience Management</h3>
-                  <CarosalDiv settings={settings} />
-                </div>
-                <div>
-                  <h3>Popular Apps For Personalizatipn</h3>
-                  <CarosalDiv settings={settings} />
-                </div>
-
-              </View>
-            </Flex>
 
             <View   >
               <AppFooter />
@@ -149,9 +100,16 @@ export const AppHeader = createComponent(AppStore, (props, AppData) => {
 
 
 
-      {/* <AppFooter /> */}
-
     </div>
   );
-});
+}
+);
 
+
+// export default connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// )(AppHeader)
+
+
+// export default AppHeader;

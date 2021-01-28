@@ -27,8 +27,13 @@ import fourteen from '../../assets/img/5.png'
 
 
 import { CarosalItem } from "../CarosalItem/CarosalItem";
+
 import {Button} from '@adobe/react-spectrum'
 
+import {HooksCakeContainer} from './HooksCakeContainer';
+import reduxStore from '../../redux/reduxStore'
+
+import { Provider } from 'react-redux'
 
 export const CarosalDiv = (props) => {
   let settings = {
@@ -45,7 +50,7 @@ export const CarosalDiv = (props) => {
 
   if (props.settings) {
     settings = props.settings;
-    console.log(settings, 'settings');
+    // console.log(settings, 'settings');
   }
   // const carosal_data=props.carosal_data;
   const carosal_data =
@@ -55,77 +60,80 @@ export const CarosalDiv = (props) => {
         heading: "Adobe exchange",
         sub: "New sub ",
         desc: "We have a number of resources that outline how to set up Spectrum CSS for your project, as well as an introductory tutorial that’s "
-
+        ,tag:"LightRoom"
+        
 
       }, {
         image: one,
         heading: "Adobe exchange",
         sub: "New sub ",
-        desc: "We have a number of resources that outline how to set up Spectrum CSS for your project, as well as an introductory tutorial that’s "
-
+        desc: "We have a number of resources that outline how to set up Spectrum CSS for your project, as well as an introductory tutorial that’s ",
+        tag:"Photoshop"
 
       }, {
         image: two,
         heading: "Adobe exchange",
         sub: "New sub ",
-        desc: "We have a number of resources that outline how to set up Spectrum CSS for your project, as well as an introductory tutorial that’s "
-
+        desc: "We have a number of resources that outline how to set up Spectrum CSS for your project, as well as an introductory tutorial that’s ",
+        tag:"InDesign"
+       
 
       }, {
         image: three,
         heading: "Adobe exchange",
         sub: "New sub ",
-        desc: "We have a number of resources that outline how to set up Spectrum CSS for your project, as well as an introductory tutorial that’s "
-
+        desc: "We have a number of resources that outline how to set up Spectrum CSS for your project, as well as an introductory tutorial that’s ",
+        tag:"Classic"
 
       }, {
         image: four,
         heading: "Adobe exchange",
         sub: "New sub ",
         desc: "We have a number of resources that outline how to set up Spectrum CSS for your project, as well as an introductory tutorial that’s "
-
+        ,tag:"Photoshop1"
+        
 
       }, {
         image: five,
         heading: "Adobe exchange",
         sub: "New sub ",
         desc: "We have a number of resources that outline how to set up Spectrum CSS for your project, as well as an introductory tutorial that’s "
-
+        ,tag:"Photoshop1"
 
       }, {
         image: six,
         heading: "Adobe exchange",
         sub: "New sub ",
         desc: "We have a number of resources that outline how to set up Spectrum CSS for your project, as well as an introductory tutorial that’s "
-
+        ,tag:"InDesign"
 
       }, {
         image: sevan,
         heading: "Adobe exchange",
         sub: "New sub ",
         desc: "We have a number of resources that outline how to set up Spectrum CSS for your project, as well as an introductory tutorial that’s "
-
+        ,tag:"InDesign1"
 
       }, {
         image: eight,
         heading: "Adobe exchange",
         sub: "New sub ",
         desc: "We have a number of resources that outline how to set up Spectrum CSS for your project, as well as an introductory tutorial that’s "
-
+        ,tag:"Photoshop1"
       }
       , {
         image: nine,
         heading: "Adobe exchange",
         sub: "New sub ",
         desc: "We have a number of resources that outline how to set up Spectrum CSS for your project, as well as an introductory tutorial that’s "
-
+        ,tag:"Photoshop1"
       }
       , {
         image: ten,
         heading: "Adobe exchange",
         sub: "New sub ",
         desc: "We have a number of resources that outline how to set up Spectrum CSS for your project, as well as an introductory tutorial that’s "
-
+        ,tag:"Photoshop1"
 
       }
       , {
@@ -133,27 +141,28 @@ export const CarosalDiv = (props) => {
         heading: "Adobe exchange",
         sub: "New sub ",
         desc: "We have a number of resources that outline how to set up Spectrum CSS for your project, as well as an introductory tutorial that’s "
-
+        ,tag:"Photoshop1"
 
       }, {
         image: twelve,
         heading: "Adobe exchange",
         sub: "New sub ",
         desc: "We have a number of resources that outline how to set up Spectrum CSS for your project, as well as an introductory tutorial that’s "
-
+        ,tag:"LightRoom"
       }
       , {
         image: therten,
         heading: "Adobe exchange",
         sub: "New sub ",
         desc: "We have a number of resources that outline how to set up Spectrum CSS for your project, as well as an introductory tutorial that’s "
-
+        ,tag:"LightRoom1"
       }
       , {
         image: fourteen,
         heading: "Adobe exchange",
         sub: "New sub ",
         desc: "We have a number of resources that outline how to set up Spectrum CSS for your project, as well as an introductory tutorial that’s "
+        ,tag:"Classic"
       }
     ];
 
@@ -175,10 +184,9 @@ export const CarosalDiv = (props) => {
       {dat.desc}
       </div>
       <hr/>
-
       <div className="BottomCarosal">
         <div>
-        campain 
+        {dat.tag}
         </div>
       <Button variant="primary" >
        Get
@@ -195,9 +203,14 @@ export const CarosalDiv = (props) => {
     <>
       <div>
 
-        <Slider {...settings}>
+        {/* <Slider {...settings}>
           {listItems2}
-        </Slider>
+        </Slider> */}
+
+          {/* <Provider store={reduxStore}> */}
+<HooksCakeContainer settings={settings} ></HooksCakeContainer>
+{/* </Provider> */}
+
       </div>
     </>
   );
