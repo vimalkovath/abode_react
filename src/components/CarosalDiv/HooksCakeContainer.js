@@ -1,5 +1,6 @@
-import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+
+import React, { useMemo} from 'react'; 
+import { useSelector, useDispatch,useState } from 'react-redux'
 import { buyCake, removeCake, filterCake } from '../../redux'
 import _ from 'lodash';
 
@@ -13,7 +14,6 @@ import sevan from '../../assets/img/7.png'
 import eight from '../../assets/img/5.png'
 import nine from '../../assets/img/6.png'
 import ten from '../../assets/img/7.png'
-
 import eleven from '../../assets/img/2.png'
 import twelve from '../../assets/img/3.png'
 import therten from '../../assets/img/4.png'
@@ -26,18 +26,19 @@ export const HooksCakeContainer = (props) => {
 
   const settings = props.settings;
 
-
   const numOfCakes = useSelector(state => state.cake)
-  // const dispatch = useDispatch()
-  // selectUserIds = state => state.users.map(user => user.id);
-
 
   let listItems2 = "";
-
   let carosal_data1 = numOfCakes;
+  
+
 
   if (!_.isEmpty(carosal_data1) && !_.isEmpty(carosal_data1.cake)) {
-    console.log(carosal_data1, "carosal data inside", carosal_data1.cake);
+   
+   
+    console.log(carosal_data1.cake.length, "carosal data inside", carosal_data1.cake);
+
+    
     listItems2 = carosal_data1.cake.map((dat) =>
       <div className="CarosalDiv" key={dat.image}>
         <div className="CarosalDivInner">
@@ -61,15 +62,20 @@ export const HooksCakeContainer = (props) => {
     );
   }
 
-
+  // let listItems3 = useMemo(()=> listItems2 , [])
+  // console.log("dsds");
 
   return (
     <div>
-      {/* <h2>Number of cakes - {numOfCakes} </h2> */}
 
+      {( (carosal_data1)&&(carosal_data1.cake) && (carosal_data1.cake.length>0) )
+&& 
       <Slider {...settings}>
         {listItems2}
-      </Slider>
+      </Slider> 
+      }
+
     </div>
   )
+
 }

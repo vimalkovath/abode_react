@@ -6,7 +6,7 @@ import { Column, Linkage, LinkP } from "../../common/styled";
 import './HeaderAdobe.css';
 import MenuList from "./MenuList";
 export const HeaderAdobe = (props) => {
-
+console.log("Header")
   return (
     <header id="feds-topnav" className="feds-navBar-wrapper" >
       

@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState,useCallback } from 'react';
 
 
 import { useSelector, useDispatch } from 'react-redux'
-import { filterCake,filterList } from '../../redux'
+import { filterCake, filterList } from '../../redux'
 
 
 const list = [
-  'All', 
+  'All',
   'Photoshop',
   'InDesign',
   'DreamViewer',
@@ -21,34 +21,42 @@ const list = [
   'InDesignv1',
   'DreamViewerv1',
   'LightRoomv1',
-  ];
+];
 
 export const ListItems = (props) => {
 
+  const [listClick, setListClick] = useState("All");
 
   // const numOfCakes = useSelector(state => state.cake)
   const dispatch = useDispatch()
 
-
-  const handleClickOnList = (_props) => {
-   console.log(_props,"props");
-  //  props.onListClick(_props);
-    // dispatch(filterCake({filter:"Classic"}))
+  // let listItems3 = useMemo(()=> listItems2 , [])
+  const handleClickOnList =  useCallback((_props) => {
+    console.log(_props, "props");
+    setListClick(_props);
     dispatch(filterList(_props))
-  };
+  },
+    [listClick]
+  );
+
+  // const handleClickOnList = (_props) => {
+  //   console.log(_props, "props");
+  //   dispatch(filterList(_props))
+  // };
+
   return (
 
     <>
-    <ul>
-      {list.map(item => {
-      return <li key={item}  onClick={(e) => handleClickOnList(item)} >{item}</li>;
-    })}
-  </ul>
+      <ul>
+        {list.map(item => {
+          return <li key={item} onClick={(e) => handleClickOnList(item)} >{item}</li>;
+        })}
+      </ul>
 
-  {/* <button onClick={() => dispatch(filterCake({filter:"Classic"}))}> filter Cake </button> */}
-   
-  </>
-  
+      {/* <button onClick={() => dispatch(filterCake({filter:"Classic"}))}> filter Cake </button> */}
+
+    </>
+
   );
 };
 

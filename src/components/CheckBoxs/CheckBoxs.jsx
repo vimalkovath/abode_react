@@ -4,6 +4,8 @@ import CheckboxGroup from 'react-checkbox-group'
 export const CheckBoxs = (props) => {
   const [fruits, setFruits] = useState([])
 
+  console.log("checkboxes");
+
   useEffect(() => {
     const timer = setTimeout(() => {
       // setFruits(['apple', 'orange'])
